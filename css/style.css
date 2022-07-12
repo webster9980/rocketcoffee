@@ -145,7 +145,7 @@ body{
 
     .cabecalho{
         border-bottom: 1px solid #29292E;
-        padding: 0px 40px;
+        padding: 0px 10px;
     }
 
     .content{
@@ -222,22 +222,6 @@ body{
     }
 }
 
-
-@media (max-width: 500px){
-    .main{
-        background-image: url("../assets/blur-mobile.png");
-        /* background-position: bottom;
-        background-repeat: no-repeat; */
-    }
-
-    .img-coffee{
-        max-width: 400px;
-        max-height: 400px;
-    }
-    .titulo{
-        font-size: 50px;
-    }
-}
 
 @media (max-width: 500px){
     .main{
