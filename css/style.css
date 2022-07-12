@@ -7,18 +7,22 @@
     color: #fff;
 }
 
+:root{
+    --button: #8257E5;
+}
+
 body{
     background: #000;
-    background-image: url("../assets/blur-2.png");
-    background-position: right;
-    background-repeat: no-repeat;
+    background-image:
+        url("../assets/blur-2.png"),
+        url("../assets/blur-1.png");
+    background-repeat: no-repeat , no-repeat;
+    background-position: right top, left bottom;
+
     font-family: 'Manrope', sans-serif;
 }
 
 .content{
-    background-image: url("../assets/blur-1.png");
-    background-position: left bottom;
-    background-repeat: no-repeat;
     width: 100vw;
 }
 
@@ -112,9 +116,9 @@ body{
     line-height: 100px;
 }
 
-.main h1:nth-child(2){
-    -webkit-text-stroke: 1px #8257E5;
-    color: transparent;
+.main h1{
+    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+    color: #000;
 }
 
 .main-mobile >h1{
@@ -197,7 +201,6 @@ body{
         margin-top: 10px;
         visibility: hidden;
         overflow-y: hidden;
-        /* transition: 0.6s; */
     }
 
     #nav-bar.active #NavBar{
@@ -218,7 +221,18 @@ body{
     .nav-list a:hover{
         color: #fff;
         font-style: bold;
-        /* border-bottom: none; */
+        border-bottom: 1px solid #29292E;
+    }
+}
+
+@media (max-width: 800px){
+    .img-coffee{
+        max-width: 500px;
+        max-height: 500px;
+    }
+
+    .titulo{
+        font-size: 60px;
     }
 }
 
@@ -226,8 +240,6 @@ body{
 @media (max-width: 500px){
     .main{
         background-image: url("../assets/blur-mobile.png");
-        /* background-position: bottom;
-        background-repeat: no-repeat; */
     }
 
     .img-coffee{
