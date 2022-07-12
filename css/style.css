@@ -31,8 +31,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 10rem;
-    padding: 10px 10px;
-    margin-left: 50px;
+    margin-top: 20px;
 }
 
 .nav-list{
@@ -108,14 +107,14 @@ body{
 }
 
 .titulo{
-    font-size: 60px;
+    font-size: 80px;
     font-weight: 700;
+    line-height: 100px;
 }
 
 .main h1:nth-child(2){
     -webkit-text-stroke: 1px #8257E5;
     color: transparent;
-    font-size: 70px;
 }
 
 .main-mobile >h1{
@@ -223,6 +222,22 @@ body{
     }
 }
 
+
+@media (max-width: 500px){
+    .main{
+        background-image: url("../assets/blur-mobile.png");
+        /* background-position: bottom;
+        background-repeat: no-repeat; */
+    }
+
+    .img-coffee{
+        max-width: 400px;
+        max-height: 400px;
+    }
+    .titulo{
+        font-size: 50px;
+    }
+}
 
 @media (max-width: 500px){
     .main{
