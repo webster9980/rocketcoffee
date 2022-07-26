@@ -1,252 +1,202 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700&display=swap');
-
 *{
     margin: 0;
     padding: 0;
     text-decoration: none;
-    color: #fff;
-}
-
-:root{
-    --button: #8257E5;
-}
-
-body{
-    background: #000;
-    background-image:
-        url("../assets/blur-2.png"),
-        url("../assets/blur-1.png");
-    background-repeat: no-repeat , no-repeat;
-    background-position: right top, left bottom;
-
+    color: var(--text-color);
+    box-sizing: border-box;
     font-family: 'Manrope', sans-serif;
 }
 
-.content{
-    width: 100vw;
+:root {
+    --backgrond: #000;
+    --text-color: #FFF;
+    --button: #8257E5;
+    --border: #29292E;
+    --border-menu-mobile: #A8A8B3;
+    --text-color-menu-mobile: #E1E1E6;
+  }
+
+body{
+    background: var(--backgrond);
+    background-image: 
+        url("../assets/blur-1.png"),
+        url("../assets/blur-2.png");
+        background-repeat: no-repeat, no-repeat;
+        background-position: left bottom, right top;
 }
+/* aqui começa a parte do cabeçalho*/
 
 .cabecalho{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 10vh;
+    padding: 20px 20px;
 }
 
-.nav-bar{
+.menu{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10rem;
-    margin-top: 20px;
+    list-style-type: none;
+    gap: 1.5em;
 }
 
-.nav-list{
-    display: flex;
-    gap: 0.5rem;
-    list-style: none;
-}
-
-.nav-list a{
-    display: block;    
-    padding: 0.5rem;
-    font-size: 14px;
+.nav li{
     font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 20px;
+    letter-spacing: 2px;
 }
 
-.nav-list a:hover{
-    border-bottom: 2px solid #8257E5;
+.nav li:hover{
+     border-bottom: 1px solid var(--button); 
+    cursor: pointer;
 }
 
-.btn-menu{
-    border: 1px solid #8257E5;
-    padding: 11px 38px 11px 38px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 800;
-    line-height: 15px;
-    background: transparent;
+.btn-cafe{
+    display: block;
+    padding: 11px 38px;
+    border: 2px solid var(--button);
+    border-radius: 10px;
+    background-color: transparent;
 }
 
-.btn-menu:hover{
-    animation: pulsate 2s ease-in;
+/* aqui termina a parte do cabeçalho*/
+
+/* aqui começa a parte do conteudo*/
+
+.content{
+    height: 90vh;   
+    max-width: 800px;
+    min-width: 320px; 
+    margin: auto;
+    text-align: center;
 }
 
-@keyframes pulsate{
-    0%{
-        box-shadow: 0 0 20px #8257E5;
-    }
+.titulo , .sub-titulo{
+    font-weight: 700;
+    font-size: 70px;
 }
 
-.main{
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
+.sub-titulo{
+    color: #000;
+    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
+}
+
+.img-coffee{
+    width: 100%;
+}
+/* aqui termina a parte do conteudo*/
+
+
+/* aqui começa a parte do conteudo mobile*/
+
+.content-mobile{
+    display: none;
+    gap: 10px;
 }
 
 .titulo-mobile{
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 30px 20px;
-    margin-bottom: 50px;
-}
-
-.titulo-mobile h3{
-    text-align: center;
     font-size: 30px;
-    font-weight: 600;
+    line-height: 40px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.titulo-mobile button{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    padding: 10px 30px 10px 30px;
-    background-color: transparent;
-    border: 1px solid #8257E5;
-    font-weight: 800;
-    font-size: 11px;
-    cursor: pointer;
-}
-
-.titulo{
-    font-size: 80px;
-    font-weight: 700;
-    line-height: 100px;
-}
-
-.main h1{
-    text-shadow: -1px -1px 0 var(--button), 1px -1px 0 var(--button), -1px 1px 0 var(--button), 1px 1px 0 var(--button);
-    color: #000;
-}
-
-.main-mobile >h1{
-    text-align: justify;
-}
-
-
-.logo-mobile{
+.btn-abrir-mobile{
     display: none;
-}
-
-.blur-mobile{
-    display: none;
-}
-
-.btn-abrir{
     background-color: transparent;
     border: none;
     cursor: pointer;
-    display: none;
 }
 
+.btn-cafe-mobile{
+    padding: 10px 30px;
+    border-radius: 6px;
+    gap: 10px;
+    border: 1px solid var(--button);
+    background: transparent;
+    margin-bottom: 30px;
+}
 
-@media (max-width: 999px){
+@media (min-width: 1200px){
+    .content{
+        padding-top: 3rem;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 1000px){
     body{
         background-image: none;
     }
-
+    .content-mobile{
+        display: block;
+    }
+    .btn-abrir-mobile{
+        display: block;
+    }
+    .btn-cafe{
+        display: none;
+    }
     .cabecalho{
-        border-bottom: 1px solid #29292E;
-        padding: 0px 10px;
-    }
-
-    .content{
-        background-image: none;
-    }
-
-    .mobile-menu{
-        display: block;
-    }
-
-    .btn-menu{
-        display: none;
-    }
-
-    .logo-mobile{
-        display: block;
-    }
-
-    .logo{
-        display: none;
-    }
-
-    .nav-bar{
         justify-content: space-between;
     }
-
-    .titulo-mobile{
-        display: flex;
-    }
-
-    .btn-abrir{
-        display: block;
-    }
-
-    #NavBar{
+    /* aqui começa a parte da criação do nav pra mobile */
+    .menu{
         display: none;
-    }
-
-    #NavBar{
-        display: block;
         position: absolute;
-        width: 100%;
+        width: 100vw;
         height: 90vh;
-        top: calc(10vh + 1px);
+        top: 10vh;
         right: 0;
-        flex-direction: column;
-        align-items: flex-start;
         background: #000;
-        margin-top: 10px;
-        visibility: hidden;
-        overflow-y: hidden;
+        z-index: 1000;
     }
-
-    #nav-bar.active #NavBar{
-        visibility: visible;
+    #nav.active .menu{
+        display: block;
         overflow-y: auto;
+/*        transform: translateY(100%);
+        transition: transform 0.3s ease-in;*/
     }
-
-    .nav-list a{
+    .menu li{
         border-bottom: 1px solid #29292E;
         cursor: pointer;
         color: #A8A8B3;
+        padding: 1rem 0rem;
+        opacity: 0;
     }
-
-    .nav-list li:hover{
-        border-left: 3px solid #8257E5;
+    .menu li:hover{
+        border-left: 3px solid var(--button);
     }
+}
 
-    .nav-list a:hover{
-        color: #fff;
-        font-style: bold;
-        border-bottom: 1px solid #29292E;
+@media (max-width: 900px){
+    .titulo, .sub-titulo{
+        font-size: 50px;
     }
 }
 
 @media (max-width: 800px){
-    .img-coffee{
-        max-width: 500px;
-        max-height: 500px;
+    .titulo-mobile{
+        font-size: 26px;
+        line-height: 32px;
     }
-
-    .titulo{
-        font-size: 60px;
+    .content{
+        background-image: url("../assets/blur-mobile.png");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
 
-@media (max-width: 500px){
-    .main{
-        background-image: url("../assets/blur-mobile.png");
-    }
-
-    .img-coffee{
-        max-width: 400px;
-        max-height: 400px;
-    }
-    .titulo{
-        font-size: 50px;
+/* animção para os links do navbar */
+@keyframes navlist{
+    from{
+        opacity: 0;
+        transform: translateX(100px);
+    }to{
+        opacity: 1;
+        transform: translateX(0);
     }
 }
