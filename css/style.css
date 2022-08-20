@@ -23,6 +23,7 @@ body{
         url("../assets/blur-2.png");
         background-repeat: no-repeat, no-repeat;
         background-position: left bottom, right top;
+    box-sizing: border-box;
 }
 /* aqui começa a parte do cabeçalho*/
 
@@ -121,7 +122,6 @@ body{
 
 @media (min-width: 1200px){
     .content{
-        padding-top: 3rem;
         box-sizing: border-box;
     }
 }
@@ -182,6 +182,9 @@ body{
         font-size: 26px;
         line-height: 32px;
     }
+}
+
+@media (max-width: 450px){
     .content{
         background-image: url("../assets/blur-mobile.png");
         background-repeat: no-repeat;
